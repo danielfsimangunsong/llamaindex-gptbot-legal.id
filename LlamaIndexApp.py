@@ -4,7 +4,7 @@ from llama_index import StorageContext, load_index_from_storage, PromptHelper, S
 from langchain.chat_models import ChatOpenAI
 
 # Mendefinisikan nama directory storage index
-storage_name = "./storage_UU_PP"
+storage_name = "storage_UU_PP"
 
 @st.cache_resource
 def initialize_index(storage_name):
