@@ -44,9 +44,10 @@ def query_index(_index, query_text):
     # Mengambil hasil kueri
     response = query_engine.query(query_text)
     # Mengambil hasil sumber
-    source = response.source_nodes[0].node.get_text()
+    source_1 = response.source_nodes[0].node.get_text()
+    source_2 = response.source_nodes[1].node.get_text()
 
-    return [response, source]
+    return [response, source_1, source_2]
 
 # Mengatur tampilan aplikasi
 st.title("🦙 LlaLex Bot ⚖️ ")
@@ -72,9 +73,11 @@ if st.button("Run Query") and text is not None:
     st.text("Answer:\n")
     st.markdown(response)
 
-    source = str(result[1])
-    st.text("Source:\n")
-    st.markdown(source)
+    st.text("Sources:\n")
+    source_1 = str(result[1])
+    st.markdown("Sumber 1: " + source_1 + "\n")
+    source_2 = str(result[2])
+    st.markdown("Sumber 2: " + source_2)
     
     llm_col, embed_col = st.columns(2)
     with llm_col:
