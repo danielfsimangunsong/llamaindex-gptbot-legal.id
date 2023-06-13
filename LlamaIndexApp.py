@@ -75,9 +75,9 @@ if st.button("Run Query") and text is not None:
 
     st.text("Sources:\n")
     source_1 = str(result[1])
-    st.markdown("Sumber 1: " + source_1 + "\n")
+    st.markdown("Source 1: " + source_1 + "\n")
     source_2 = str(result[2])
-    st.markdown("Sumber 2: " + source_2)
+    st.markdown("Source 2: " + source_2)
     
     llm_col, embed_col = st.columns(2)
     with llm_col:
